@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Camera } from 'expo-camera';
-import { StyleSheet, Text, SafeAreaView, View, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, SafeAreaView, View, TouchableOpacity, Modal, Image } from 'react-native';
 // Font awesome no expo
 import { FontAwesome } from '@expo/vector-icons';
 
@@ -9,6 +9,9 @@ export default function App() {
   const [ type, setType ] = useState(Camera.Constants.Type.back);
   const [ hasPermission, setHasPermission ] = useState(null);
   const [ capturedPhoto, setCapturedPhoto ] = useState(null);
+  const [ open, setOpen ] = useState(false);
+
+
   useEffect(() => {
     (async () => {
       const { status } = await Camera.requestCameraPermissionsAsync();
@@ -21,6 +24,8 @@ export default function App() {
     if (camRef) {
       const data = await camRef.current.takePictureAsync();
       setCapturedPhoto(data.uri);
+      // console.log(data);
+      setOpen(true);
     }
   }
 
@@ -34,7 +39,7 @@ export default function App() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <Camera style={styles.camera} type={type}>
+      <Camera style={styles.camera} type={type} ref={camRef}>
         <View style={styles.contentButton}>
           <TouchableOpacity
             style={styles.buttonFlip}
@@ -47,6 +52,20 @@ export default function App() {
           </TouchableOpacity>
         </View>
       </Camera>
+      { capturedPhoto && (
+        <Modal
+          animationType='slide'
+          transparent={true}
+          visible={open}
+        >
+          <View style={styles.contentModal}>
+            <TouchableOpacity style={styles.closeButton} onPress={() => setOpen(false)}>
+              <FontAwesome name='close' size={50} color='white' />
+            </TouchableOpacity>
+            <Image style={styles.imgPhoto} source={{ uri: capturedPhoto }} />
+          </View>
+        </Modal>
+      )}
     </SafeAreaView>
   );
 }
@@ -88,5 +107,21 @@ const styles = StyleSheet.create({
     width: 50,
     height: 50,
     borderRadius: 50,
+  },
+  contentModal: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'flex-end',
+    margin: 20,
+  },
+  imgPhoto: {
+    width: '100%',
+    height: 400,
+  },
+  closeButton: {
+    position: 'absolute',
+    top: 10,
+    left: 2,
+    margin: 10,
   },
 });
