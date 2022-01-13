@@ -2,6 +2,12 @@
 
 Esse repositório contém o código fonte de um App Mobile que faz uso das funcionalidade básicas da API de câmera.
 O propóstio é documentar o estudo e manter um exemplo de fácil acesso.
+O material didático em vídeo estudado pode ser encontrado no YouTube, na playlist [Curso Reac Native (aprendize) - One Bit Code](https://www.youtube.com/playlist?list=PLdDT8if5attEd4sRnZBIkNihR-_tE612_). E uma série de vídeos sobre desenvolvimento com React Native.
+A API da câmera é apresentado e demonstrada nos seguintes vídeos em específico:
+
+- [Trabalhando com Câmera no React Native - Aula 6 - Parte 1 | Curso React Native (aprendiz)](https://www.youtube.com/watch?v=99diO-41iWU&list=PLdDT8if5attEd4sRnZBIkNihR-_tE612_&index=14)
+- [Trabalhando com Câmera no React Native - Aula 6 - Parte 2 | Curso React Native (aprendiz)](https://www.youtube.com/watch?v=GpMBkYcGlyg&list=PLdDT8if5attEd4sRnZBIkNihR-_tE612_&index=15)
+- [Trabalhando com Câmera no React Native - Aula 6 - Parte 3 | Curso React Native (aprendiz)](https://www.youtube.com/watch?v=-OpdQI_eFEc&list=PLdDT8if5attEd4sRnZBIkNihR-_tE612_&index=16)
 
 ## Rodando e testando
 
