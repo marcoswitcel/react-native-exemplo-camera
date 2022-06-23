@@ -11,14 +11,16 @@ A API da câmera é apresentado e demonstrada nos seguintes vídeos em específi
 
 ## Rodando e testando
 
-Primeiro instale o `Expo`, caso não tenha.
-[Documentação detalhada para instalar](https://docs.expo.dev/get-started/installation/), ou digite o sguinte comando no terminal:
+Primeiro instale o `Expo`, digite o seguinte comando no terminal:
 
 ```bash
 npm install --global expo-cli
 ```
 
+[Documentação detalhada de instalação do Expo e ambiente](https://docs.expo.dev/get-started/installation/)
+
 A partir daí basta clonar este repositório, instalar as dependências do NodeJS e rodar `npm run start`.
+
 Exemplo completo abaixo:
 
 ```bash
